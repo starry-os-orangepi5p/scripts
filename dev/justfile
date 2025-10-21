@@ -1,0 +1,27 @@
+# Default recipe to display help
+default:
+    @echo "You should create a soft link to this file in repo root dir to use"
+    @just --list
+
+sync:
+    repo sync -j 8
+
+# Build the project
+build:
+    @echo "Building project..."
+    bash $STARRY_ROOT/dev/build.sh
+
+# Run the project
+run:
+    @echo "Running project..."
+    # Add your run commands here
+
+# Clean build artifacts
+clean:
+    @echo "Cleaning build artifacts..."
+    # Add your clean commands here
+
+# Run tests
+test:
+    @echo "Running tests..."
+    # Add your test commands here
