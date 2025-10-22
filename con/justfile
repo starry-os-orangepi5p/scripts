@@ -1,0 +1,22 @@
+# Default recipe to display help
+default:
+    @echo "You should create a soft link to this file in repo root dir to use"
+    @just --list
+
+init:
+    sudo bash ${STARRY_CON_SCRIPT}/con/set_en.sh
+
+# Build the project
+build:
+    @echo "Building project..."
+    bash ${STARRY_CON_SCRIPT}/con/build.sh
+
+# Clean build artifacts
+clean:
+    @echo "Cleaning build artifacts..."
+    # Add your clean commands here
+
+# Run tests
+test:
+    @echo "Running tests..."
+    # Add your test commands here
