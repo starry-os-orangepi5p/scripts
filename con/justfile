@@ -4,7 +4,7 @@ default:
     @just --list
 
 init:
-    sudo bash ${STARRY_CON_SCRIPT}/con/set_en.sh
+    bash ${STARRY_CON_SCRIPT}/con/set_en.sh
 
 # Build the project
 build:
