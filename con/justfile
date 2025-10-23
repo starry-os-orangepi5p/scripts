@@ -27,6 +27,11 @@ prepare_rootfs:
     @echo "Preparing rootfs..."
     bash ${STARRY_CON_SCRIPT}/con/prepare_rootfs.sh
 
+# Update scripts
+update_scripts:
+    @echo "Updating scripts..."
+    bash ${STARRY_CON_SCRIPT}/con/update_scripts.sh
+
 # Clean build artifacts
 clean:
     @echo "Cleaning build artifacts..."
