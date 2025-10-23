@@ -18,7 +18,7 @@ flash_rootfs:
     bash ${STARRY_CON_SCRIPT}/con/flash_rootfs.sh
 
 # Flash uimage
-flash_rootfs:
+flash:
     @echo "Flashing rootfs..."
     bash ${STARRY_CON_SCRIPT}/con/flash.sh
 
