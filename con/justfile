@@ -3,6 +3,7 @@ default:
     @echo "You should create a soft link to this file in repo root dir to use"
     @just --list
 
+# Initialize the ethernet configuration
 init:
     bash ${STARRY_CON_SCRIPT}/con/set_en.sh
 
@@ -10,6 +11,21 @@ init:
 build:
     @echo "Building project..."
     bash ${STARRY_CON_SCRIPT}/con/build.sh
+
+# Flash rootfs
+flash_rootfs:
+    @echo "Flashing rootfs..."
+    bash ${STARRY_CON_SCRIPT}/con/flash_rootfs.sh
+
+# Flash uimage
+flash_rootfs:
+    @echo "Flashing rootfs..."
+    bash ${STARRY_CON_SCRIPT}/con/flash.sh
+
+# Prepare rootfs
+prepare_rootfs:
+    @echo "Preparing rootfs..."
+    bash ${STARRY_CON_SCRIPT}/con/prepare_rootfs.sh
 
 # Clean build artifacts
 clean:
