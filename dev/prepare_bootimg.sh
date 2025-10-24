@@ -7,6 +7,12 @@ BOOT_IMG="${STARRY_BUILD}/boot.img"
 set -e
 
 sudo mkdir -p $MOUNT_POINT
+
+# if mounted, unmount
+if mount | grep -q "$MOUNT_POINT"; then
+    sudo umount $MOUNT_POINT
+fi
+
 sudo mount -o loop $BOOT_IMG $MOUNT_POINT
 
 sudo mkdir -p $MOUNT_POINT/boot
