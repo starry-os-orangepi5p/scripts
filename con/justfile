@@ -12,6 +12,15 @@ build:
     @echo "Building project..."
     bash ${STARRY_CON_SCRIPT}/con/build.sh
 
+flash_boot:
+    @echo "Flashing boot..."
+    bash ${STARRY_CON_SCRIPT}/con/flash_boot.sh
+
+# Run build then flash boot
+opi:
+    @echo "Running build and flashing boot..."
+    just build flash_boot
+
 # Flash rootfs
 flash_rootfs:
     @echo "Flashing rootfs..."

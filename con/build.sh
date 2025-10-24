@@ -19,5 +19,3 @@ ssh ${STARRY_SSH_HOST} \
        STARRY_TOOL=${STARRY_TOOL} \
        STARRY_BUILD=${STARRY_BUILD} \
        bash ${STARRY_ROOT}/scripts/dev/prepare_bootimg.sh"
-
-bash ${STARRY_CON_SCRIPTS}/con/flash_boot.sh
