@@ -13,10 +13,3 @@ ssh ${STARRY_SSH_HOST} \
     # ${STARRY_TFTP_PATH}/Uimage
 cd ${STARRY_CON_BUILD} && git pull
 cp ${STARRY_CON_BUILD}/starry-mix_aarch64-opi5p.uimg ${STARRY_TFTP_PATH}/Uimage
-
-ssh ${STARRY_SSH_HOST} \
-   -t "STARRY_ROOT=${STARRY_ROOT} \
-       STARRY_TOOL=${STARRY_TOOL} \
-       STARRY_BUILD=${STARRY_BUILD} \
-       STARRY_DATA=${STARRY_DATA} \
-       bash ${STARRY_ROOT}/scripts/dev/prepare_bootimg.sh"
