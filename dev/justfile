@@ -6,10 +6,15 @@ default:
 sync:
     repo sync -j 8
 
-# Build the project
-build:
-    @echo "Building project..."
-    bash $STARRY_ROOT/dev/build.sh
+# Build the project (LOG=debug MODE=debug BACKTRACE=y by default)
+build LOG="debug" MODE="debug" BACKTRACE="y":
+    @echo "Building project with LOG={{LOG}} MODE={{MODE}} BACKTRACE={{BACKTRACE}}..."
+    LOG={{LOG}} MODE={{MODE}} BACKTRACE={{BACKTRACE}} bash $STARRY_ROOT/dev/build.sh
+
+# Build and push to git
+build-push LOG="debug" MODE="debug" BACKTRACE="y":
+    @echo "Building and pushing with LOG={{LOG}} MODE={{MODE}} BACKTRACE={{BACKTRACE}}..."
+    LOG={{LOG}} MODE={{MODE}} BACKTRACE={{BACKTRACE}} bash $STARRY_ROOT/dev/build.sh push
 
 # Run the project
 run:
