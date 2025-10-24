@@ -17,6 +17,16 @@ build-push LOG="debug" MODE="debug" BACKTRACE="y":
     @echo "Building and pushing with LOG={{LOG}} MODE={{MODE}} BACKTRACE={{BACKTRACE}}..."
     LOG={{LOG}} MODE={{MODE}} BACKTRACE={{BACKTRACE}} bash ${STARRY_CON_SCRIPT}/con/build.sh push
 
+# Build axplat-opi5p (LOG=info MODE=release APP=rstiny by default)
+build-axplat LOG="info" MODE="release" APP="rstiny":
+    @echo "Building axplat-opi5p with LOG={{LOG}} MODE={{MODE}} APP={{APP}}..."
+    LOG={{LOG}} MODE={{MODE}} APP={{APP}} bash ${STARRY_CON_SCRIPT}/con/build_axplat.sh
+
+# Build axplat-opi5p and push to git
+build-axplat-push LOG="info" MODE="release" APP="rstiny":
+    @echo "Building axplat-opi5p and pushing with LOG={{LOG}} MODE={{MODE}} APP={{APP}}..."
+    LOG={{LOG}} MODE={{MODE}} APP={{APP}} bash ${STARRY_CON_SCRIPT}/con/build_axplat.sh push
+
 # Prepare boot image then flash it
 flash_boot:
     @echo "Flashing boot..."
