@@ -1,6 +1,10 @@
+#!/bin/bash
+
+set -e
+
 # archive old log
-mkdir -p ${STARRY_LOG}/archive
-mv ${STARRY_LOG}/last_console*.log ${STARRY_LOG}/archive
+mkdir -p ${STARRY_CON_LOG}/archive
+mv ${STARRY_CON_LOG}/last_console*.log ${STARRY_CON_LOG}/archive
 
 log_file=${STARRY_CON_LOG}/last_console$(date +%Y%m%d_%H%M%S).log
 touch ${log_file}

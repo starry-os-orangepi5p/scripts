@@ -43,3 +43,10 @@ setenv bootcmd 'echo "Loading Kernel via TFTP, DTB from EXT4..."; \
 saveenv
 reset
 ```
+
+origin
+```
+setenv bootcmd 'bootflow scan -lb'
+saveenv
+reset
+```
