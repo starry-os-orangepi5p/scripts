@@ -11,9 +11,9 @@ LOG=${LOG:-info}
 MODE=${MODE:-release}
 APP=${APP:-rstiny}
 
-app_target=${APP}.uimg
+app_target=${APP}.bin
 
-cd ${STARRY_ROOT}/axplat-opi5p
+cd ${STARRY_ROOT}/starry-mix/module-local/axplat-opi5p
 make APP=${APP} LOG=${LOG} MODE=${MODE} build
 make APP=${APP} uimage
 
