@@ -11,7 +11,7 @@ LOG=${LOG:-info}
 MODE=${MODE:-release}
 APP=${APP:-rstiny}
 
-app_target=${APP}.bin
+app_target=${APP}.uimg
 opi5p_root=${STARRY_ROOT}/starry-mix/module-local/axplat-opi5p
 
 cd ${opi5p_root}

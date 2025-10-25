@@ -22,4 +22,4 @@ ssh ${STARRY_SSH_HOST} \
 
 # use git repo instead of scp
 cd ${STARRY_CON_BUILD} && git pull
-cp ${STARRY_CON_BUILD}/${APP}.bin ${STARRY_TFTP_PATH}/Uimage
+cp ${STARRY_CON_BUILD}/${APP}.uimg ${STARRY_TFTP_PATH}/Uimage
