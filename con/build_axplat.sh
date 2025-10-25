@@ -20,6 +20,10 @@ ssh ${STARRY_SSH_HOST} \
        APP=${APP} \
        bash ${STARRY_ROOT}/scripts/dev/build_axplat.sh ${PUSH_ARG}"
 
-# use git repo instead of scp
-cd ${STARRY_CON_BUILD} && git pull
-cp ${STARRY_CON_BUILD}/${APP}.uimg ${STARRY_TFTP_PATH}/Uimage
+
+# if push
+if [ "$PUSH_ARG" = "push" ]; then
+    # use git repo instead of scp
+    cd ${STARRY_CON_BUILD} && git pull
+    cp ${STARRY_CON_BUILD}/${APP}.uimg ${STARRY_TFTP_PATH}/Uimage
+fi

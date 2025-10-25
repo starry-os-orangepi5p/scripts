@@ -7,6 +7,10 @@ default:
 init:
     bash ${STARRY_CON_SCRIPT}/con/set_en.sh
 
+# Capture console log and sync to remote server
+capture_log:
+    bash ${STARRY_CON_SCRIPT}/con/capture_log.sh
+
 # Build the project (LOG=debug MODE=debug BACKTRACE=y by default)
 build LOG="debug" MODE="debug" BACKTRACE="y":
     @echo "Building project with LOG={{LOG}} MODE={{MODE}} BACKTRACE={{BACKTRACE}}..."
@@ -16,6 +20,7 @@ build LOG="debug" MODE="debug" BACKTRACE="y":
 build-push LOG="debug" MODE="debug" BACKTRACE="y":
     @echo "Building and pushing with LOG={{LOG}} MODE={{MODE}} BACKTRACE={{BACKTRACE}}..."
     LOG={{LOG}} MODE={{MODE}} BACKTRACE={{BACKTRACE}} bash ${STARRY_CON_SCRIPT}/con/build.sh push
+    just capture_log
 
 # Build axplat-opi5p (LOG=info MODE=release APP=rstiny by default)
 build-axplat LOG="info" MODE="release" APP="rstiny":
@@ -26,6 +31,7 @@ build-axplat LOG="info" MODE="release" APP="rstiny":
 build-axplat-push LOG="info" MODE="release" APP="rstiny":
     @echo "Building axplat-opi5p and pushing with LOG={{LOG}} MODE={{MODE}} APP={{APP}}..."
     LOG={{LOG}} MODE={{MODE}} APP={{APP}} bash ${STARRY_CON_SCRIPT}/con/build_axplat.sh push
+    just capture_log
 
 # Prepare boot image then flash it
 flash_boot:
