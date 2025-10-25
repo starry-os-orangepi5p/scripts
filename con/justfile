@@ -52,6 +52,11 @@ update_scripts:
     @echo "Updating scripts..."
     bash ${STARRY_CON_SCRIPT}/con/update_scripts.sh
 
+# Update log
+update_log:
+    @echo "Updating log..."
+    bash ${STARRY_CON_SCRIPT}/con/update_log.sh
+
 # Clean build artifacts
 clean:
     @echo "Cleaning build artifacts..."
