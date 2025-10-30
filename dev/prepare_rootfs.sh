@@ -16,7 +16,7 @@ fi
 sudo mount -o loop $ROOTFS $MOUNT_POINT
 
 sudo mkdir -p $MOUNT_POINT/test
-sudo cp ${STARRY_LFS_BUILD}/dino_terminal $MOUNT_POINT/test
+sudo cp ${STARRY_BUILD}/dino_terminal $MOUNT_POINT/test
 
 sudo umount $MOUNT_POINT
 sudo rm -r $MOUNT_POINT
