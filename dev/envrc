@@ -1,0 +1,15 @@
+STARRY_ROOT="$(pwd)"
+STARRY_SCRIPT_ROOT="${STARRY_ROOT}/scripts"
+STARRY_OS_ROOT="${STARRY_ROOT}/3906cf9f2ccbf898bd3512d5862ef92e/StarryOS"
+TOOLCHAIN_PATH="${STARRY_ROOT}/toolchains"
+AARCH64_MUSL_PATH="${TOOLCHAIN_PATH}/aarch64-linux-musl-cross/bin"
+STARRY_BUILD="${STARRY_ROOT}/starry_build_t"
+
+source "${STARRY_SCRIPT_ROOT}/common/common.sh"
+export STARRY_BUILD_UIMG
+
+export STARRY_SCRIPT_ROOT
+export STARRY_OS_ROOT
+export STARRY_BUILD
+export PATH="${AARCH64_MUSL_PATH}:${PATH}"
+

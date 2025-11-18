@@ -1,42 +1,20 @@
-# Default recipe to display help
-default:
-    @echo "You should create a soft link to this file in repo root dir to use"
-    @just --list
-
-sync:
-    repo sync -j 8
-
 # Build the project (LOG=debug MODE=debug BACKTRACE=y by default)
 build LOG="debug" MODE="debug" BACKTRACE="y":
     @echo "Building project with LOG={{LOG}} MODE={{MODE}} BACKTRACE={{BACKTRACE}}..."
-    LOG={{LOG}} MODE={{MODE}} BACKTRACE={{BACKTRACE}} bash $STARRY_ROOT/dev/build.sh
+    LOG={{LOG}} MODE={{MODE}} BACKTRACE={{BACKTRACE}} bash $STARRY_SCRIPT_ROOT/dev/build.sh
 
 # Build and push to git
 build-push LOG="debug" MODE="debug" BACKTRACE="y":
     @echo "Building and pushing with LOG={{LOG}} MODE={{MODE}} BACKTRACE={{BACKTRACE}}..."
-    LOG={{LOG}} MODE={{MODE}} BACKTRACE={{BACKTRACE}} bash $STARRY_ROOT/dev/build.sh push
+    LOG={{LOG}} MODE={{MODE}} BACKTRACE={{BACKTRACE}} bash $STARRY_SCRIPT_ROOT/dev/build.sh push
 
 # Build axplat-opi5p (LOG=info MODE=release APP=rstiny by default)
 build-axplat LOG="info" MODE="release" APP="rstiny":
     @echo "Building axplat-opi5p with LOG={{LOG}} MODE={{MODE}} APP={{APP}}..."
-    LOG={{LOG}} MODE={{MODE}} APP={{APP}} bash $STARRY_ROOT/dev/build_axplat.sh
+    LOG={{LOG}} MODE={{MODE}} APP={{APP}} bash $STARRY_SCRIPT_ROOT/dev/build_axplat.sh
 
 # Build axplat-opi5p and push to git
 build-axplat-push LOG="info" MODE="release" APP="rstiny":
     @echo "Building axplat-opi5p and pushing with LOG={{LOG}} MODE={{MODE}} APP={{APP}}..."
-    LOG={{LOG}} MODE={{MODE}} APP={{APP}} bash $STARRY_ROOT/dev/build_axplat.sh push
+    LOG={{LOG}} MODE={{MODE}} APP={{APP}} bash $STARRY_SCRIPT_ROOT/dev/build_axplat.sh push
 
-# Run the project
-run:
-    @echo "Running project..."
-    # Add your run commands here
-
-# Clean build artifacts
-clean:
-    @echo "Cleaning build artifacts..."
-    # Add your clean commands here
-
-# Run tests
-test:
-    @echo "Running tests..."
-    # Add your test commands here
