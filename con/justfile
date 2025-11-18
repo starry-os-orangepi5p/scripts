@@ -63,12 +63,3 @@ update_log:
     @echo "Updating log..."
     bash ${STARRY_CON_SCRIPT}/con/update_log.sh
 
-# Clean build artifacts
-clean:
-    @echo "Cleaning build artifacts..."
-    # Add your clean commands here
-
-# Run tests
-test:
-    @echo "Running tests..."
-    # Add your test commands here

@@ -6,15 +6,16 @@ LOG=${LOG:-debug}
 MODE=${MODE:-debug}
 BACKTRACE=${BACKTRACE:-y}
 
+UIMG="${STARRY_BUILD_UIMG}"
+
 PUSH_ARG=""
 if [ "$1" = "push" ]; then
     PUSH_ARG="push"
 fi
 
-ssh ${STARRY_SSH_HOST} \
-   -t "STARRY_ROOT=${STARRY_ROOT} \
-       STARRY_TOOL=${STARRY_TOOL} \
-       STARRY_BUILD=${STARRY_BUILD} \
+ssh "${STARRY_SSH_HOST}" \
+   -t "cd ${STARRY_ROOT} && \
+       source .envrc
        LOG=${LOG} \
        MODE=${MODE} \
        BACKTRACE=${BACKTRACE} \
@@ -24,6 +25,6 @@ if [ "$PUSH_ARG" = "push" ]; then
     # use git repo instead of scp
     # scp ${STARRY_SSH_HOST}:${STARRY_ROOT}/starry-mix/starry-mix_aarch64-opi5p.uimg \
         # ${STARRY_TFTP_PATH}/Uimage
-    cd ${STARRY_CON_BUILD} && git pull
-    cp ${STARRY_CON_BUILD}/starry-mix_aarch64-opi5p.uimg ${STARRY_TFTP_PATH}/Uimage
+    cd "${STARRY_CON_BUILD}" && git pull
+    cp "${STARRY_CON_BUILD}/${UIMG}" "${STARRY_TFTP_PATH}/Uimage"
 fi

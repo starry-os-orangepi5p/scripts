@@ -1,0 +1,23 @@
+STARRY_CON_ROOT="$(pwd)"
+export STARRY_CON_ROOT
+export STARRY_CON_SCRIPT="${STARRY_CON_ROOT}/scripts"
+export STARRY_CON_SHARE="${STARRY_CON_ROOT}/share"
+export STARRY_CON_DATA="${STARRY_CON_SCRIPT}/data"
+export STARRY_CON_BUILD="${STARRY_CON_ROOT}/starry_build_t"
+export STARRY_CON_LFS_BUILD="${STARRY_CON_ROOT}/starry_lfs_build"
+export STARRY_CON_LOG="${STARRY_CON_ROOT}/starry_log"
+export PATH="${STARRY_CON_ROOT}/bin:${PATH}"
+export PATH="${HOME}/bin:${PATH}"
+
+export STARRY_SSH_HOST="ttu"
+
+export STARRY_CON_EN_INTERFACE="en6"
+export STARRY_TFTP_PATH="/private/tftpboot"
+export STARRY_CON_TFTP_SERVER_IP="192.168.1.100"
+# no effect when you link board and PC directly
+export STARRY_CON_TFTP_SERVER_NETMASK="255.255.255.0"
+
+source "${STARRY_CON_SCRIPT}/common/common.sh"
+
+STARRY_ROOT="/home/seven/Workspace/opi/workspace"
+

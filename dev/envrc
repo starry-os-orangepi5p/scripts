@@ -6,7 +6,6 @@ AARCH64_MUSL_PATH="${TOOLCHAIN_PATH}/aarch64-linux-musl-cross/bin"
 STARRY_BUILD="${STARRY_ROOT}/starry_build_t"
 
 source "${STARRY_SCRIPT_ROOT}/common/common.sh"
-export STARRY_BUILD_UIMG
 
 export STARRY_SCRIPT_ROOT
 export STARRY_OS_ROOT
