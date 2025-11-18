@@ -15,7 +15,7 @@ fi
 
 ssh "${STARRY_SSH_HOST}" \
    -t "cd ${STARRY_ROOT} && \
-       source .envrc
+       source .envrc && \
        LOG=${LOG} \
        MODE=${MODE} \
        BACKTRACE=${BACKTRACE} \

@@ -11,4 +11,5 @@ export STARRY_SCRIPT_ROOT
 export STARRY_OS_ROOT
 export STARRY_BUILD
 export PATH="${AARCH64_MUSL_PATH}:${PATH}"
+export PATH="${PATH}:/home/linuxbrew/.linuxbrew/bin/"
 

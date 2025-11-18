@@ -19,5 +19,5 @@ export STARRY_CON_TFTP_SERVER_NETMASK="255.255.255.0"
 
 source "${STARRY_CON_SCRIPT}/common/common.sh"
 
-STARRY_ROOT="/home/seven/Workspace/opi/workspace"
+export STARRY_ROOT="/home/seven/Workspace/opi/workspace"
 
